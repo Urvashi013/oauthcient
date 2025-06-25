@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InnaITKey Authentication</title>
+
+  <!-- Required Scripts -->
+  <script src="innait-gui-library/common/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/material/moment.min.js"></script>
+  <script src="innait-gui-library/common/js/key/local-storage.js?v=0.0.1" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/key/program.js?v=0.0.1" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/key/base64url-ab.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/config.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/webHid.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/eventSource.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/webSocket.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/fpModal.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/fpPasswordModal.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/driverHid.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/deviceHandler.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/driverHandler.js" type="text/javascript"></script>
+  <script src="innait-gui-library/driver/fetchApi.js" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/core/aes.js" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/core/sha256.js" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/core/jsencrypt.js" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/helper/subtleHelper.js?v=0.0.1" type="text/javascript"></script>
+  <script src="innait-gui-library/common/js/helper/issuerHelper.js?v=0.0.1" type="text/javascript"></script>
+</head>
+<body>
+
+<h1>InnaITKey Biometric Authentication</h1>
+<p>Connect your InnaITKey device and authenticate using biometric data.</p>
+
+<!-- Device Selection Dropdown -->
+<label for="deviceDropdown">Select InnaITKey Device:</label>
+<select id="deviceDropdown">
+  <option value="">--Select a device--</option>
+</select>
+
+<!-- Buttons to trigger actions -->
+<button id="lnkEnableHidDevice">Pair HID Device</button>
+<button id="lnkRefreshDevice">Refresh Devices</button>
+<button id="authenticateWithInnaitKey">Authenticate</button>
+
+<script>
+  console.log("Page loaded and initializing properties.");
+
+  var innaITProperties = {
+    client_id: 'precision-poc-nic_6223166dcc0fa34dc820d5c5',
+    client_secret: '0C60232B9535EAB47E7FB54F67D4DA854DC09D3B98E224A252BF12569935AC5D',
+    geolocation: 1,
+    reason: '',
+    title: '',
+    prompt: '',
+    redirect_uri: 'https://nic-poc.innait.com'
+  };
+
+  setLS('pik_projectId', innaITProperties.client_id.split('_')[0]);
+  removeLS('hidDiscoveredList');
+
+  fnIncludeSubtle('', function(subtleEnabled) {
+    console.log("Subtle encryption enabled:", subtleEnabled);
+    fnChallengeIssuer(subtleEnabled, innaITProperties.geolocation, function(challengeIssuer) {
+      console.log("Challenge issued:", challengeIssuer);
+      deviceHandler.init(innaitEncrypted, 2, undefined, authenticatorStatusHandler, false, true, "hid" in navigator);
+      driverHandler.init(innaitEncrypted, 1);
+      console.log("Device handler and driver initialized.");
+    });
+  });
+
+  var pairDeviceBtnId = document.getElementById("lnkEnableHidDevice");
+  var refreshBtnId = document.getElementById("lnkRefreshDevice");
+  var authenticateBtnId = document.getElementById("authenticateWithInnaitKey");
+  var deviceDropdown = document.getElementById("deviceDropdown");
+
+  if ("hid" in navigator) {
+    pairDeviceBtnId.onclick = function(event) {
+      console.log("Pair HID Device button clicked.");
+      requestHidDevice();
+    };
+  } else {
+    refreshBtnId.onclick = function(event) {
+      console.log("Refresh Devices button clicked for non-HID browser.");
+      deviceHandler.initNonWebHidDriver();
+      authenticatorStatusHandler();
+    };
+  }
+
+  authenticateBtnId.onclick = function(event) {
+    console.log("Authenticate button clicked.");
+    let serialNumber = deviceDropdown.value;
+    if (serialNumber) {
+      authenticateWithInnaitKey(serialNumber);
+    } else {
+      alert("Please select a device from the dropdown.");
+    }
+  };
+
+  function authenticatorStatusHandler() {
+    console.log("authenticatorStatusHandler called.");
+    let connectedInnaitKeyList = deviceHandler.getList();
+    console.log("Connected InnaITKey Devices:", connectedInnaitKeyList);
+
+    // Populate the dropdown with connected devices
+    deviceDropdown.innerHTML = '<option value="">--Select a device--</option>'; // Clear existing options
+    connectedInnaitKeyList.forEach(function(device) {
+      let option = document.createElement("option");
+      option.value = device.serialNumber;  // Use serialNumber as the value
+      option.text = `Device ${device.serialNumber}`;
+      deviceDropdown.add(option);
+    });
+  }
+
+  function authenticateWithInnaitKey(serialNumber) {
+    console.log("authenticateWithInnaitKey called with serial number:", serialNumber);
+    let deviceInfo = deviceHandler.getDeviceInfo(serialNumber);
+
+    if (!deviceInfo) {
+      console.error("Device info cannot be empty");
+      alert("Device info cannot be empty");
+      return;
+    }
+
+    console.log("Device info retrieved:", deviceInfo);
+    var codeVerifier = getCodeVerifier();
+    getCodeChallenge(codeVerifier, function(codeChallenge) {
+      if (codeChallenge) {
+        console.log("Code challenge created:", codeChallenge);
+        var queryData = 'code_challenge=' + codeChallenge +
+        '&deviceInfo=' + deviceInfo +
+        '&reason=LOGIN&title=Authentication&prompt=Please+authenticate+to+continue' +
+        '&projectId=' + getLS('pik_projectId');
+
+
+        makeDeviceXmlHttpRequestApiCall('authenticateWithInnaitKey', 'POST', '', queryData, '', function(response) {
+          console.log("Response from authenticateWithInnaitKey API call:", response);
+          if (response.status === 0) {
+            var parsedData = JSON.parse(response.data);
+            var tokenArr = [parsedData.id];
+            
+            var postData = { scope: 'openid' };
+            queryData = 'client_id=' + innaITProperties.client_id +
+                        '&code_challenge=' + codeChallenge +
+                        '&validationRefList=' + tokenArr;
+
+            makeDeviceXmlHttpRequestApiCall('createToken', 'POST', '', queryData, JSON.stringify(postData), function(tokenResult) {
+              console.log("Response from createToken API call:", tokenResult);
+              if (tokenResult.status === 0) {
+                queryData = 'code=' + tokenResult.data +
+                            '&client_secret=' + innaITProperties.client_secret +
+                            '&client_id=' + innaITProperties.client_id +
+                            '&redirect_uri=' + innaITProperties.redirect_uri +
+                            '&code_verifier=' + codeVerifier;
+
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', driver_serverApiUrl + '/getToken', true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded; charset=utf-8");
+                xhr.onreadystatechange = function() {
+                  if (this.readyState === XMLHttpRequest.DONE) {
+                    if (this.status === 200) {
+                      var parseData = JSON.parse(this.responseText);
+                      console.log("Final authentication successful:", parseData);
+                    } else {
+                      console.error("Get Token Failed");
+                      alert("Get Token Failed");
+                    }
+                  }
+                };
+                console.log("Sending final token request.");
+                xhr.send(queryData);
+              } else {
+                console.error("Error from createToken API:", tokenResult.message);
+                alert(tokenResult.message);
+              }
+            });
+          } else {
+            console.error("Error from authenticateWithInnaitKey API:", response.message);
+            alert(response.message);
+          }
+        });
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

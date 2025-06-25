@@ -1,0 +1,387 @@
+body{
+	background: #00a651 !important;
+	margin: 0px;
+}
+
+.page-top{
+	background: #00b26b;
+	height: 180px;
+	border-bottom-left-radius: 205px;
+	border-bottom-right-radius: 0px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	opacity: 0.3;
+}
+
+.page-bottom{
+	background: #00b26b;
+	height: 313px;
+	border-top-right-radius: 375px;
+	border-top-left-radius: -9px;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	opacity: 0.3;
+}
+
+.attendance-card{
+	max-width: 350px;
+	background: #fff;
+	min-height: 200px;
+	box-shadow: 0px 0px 4px #969696;
+	margin: auto;
+	margin-top: 100px;
+	overflow: auto;
+	z-index: 1 !important;
+	position: relative;
+}
+
+.attendance-card .logo{
+	width: 140px;
+	margin: 10px 0px 0px 0px;
+}
+
+.attendance-card .fp-img{
+	width: 90px;
+	margin: 10px 0px 0px 0px;
+}
+
+.attendance-card .header{
+	text-align: center;
+}
+
+.attendance-card .header h2{
+	font-size: 18px;
+	margin: 20px 0px 0px 0px;
+}
+
+.attendance-card .body{
+	padding: 40px;
+	margin-bottom: 20px;
+}
+
+.attendance-card .body button{
+	width: 100px;
+	height: 100px;
+}
+
+.attendance-card .body span{
+	display: block;
+}
+
+.attendance-card .footer{
+	padding: 20px;
+	text-align: right;
+}
+
+.attendance-card .footer button{
+	background: #00a651;
+	color: #fff;
+}
+
+.attendance-card hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.attendance-card small{
+	position: absolute;
+	margin: -9px 0px 0px 188px;
+}
+
+.attendace-btn-check .selected{
+	background-color: #e7fde7 !important;
+}
+
+.attendance-card .fp-scan-info{
+	margin-top: 10px;
+}
+
+.attendance-card .fp-success-img{
+	margin-top: 14px;
+	width: 53px;
+}
+
+.attendance-card .fp-info-success{
+	color: #008000 !important;
+}
+
+.attendance-card .fp-result-img{
+	width: 55px;
+}
+
+.attendance-card .fp-info-result{
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+/*-- Transport --*/
+.card.transport{
+	border: 1px solid #d0d0d0;
+	border-radius: 5px;
+	box-shadow: none;
+	margin-top: 15px;
+}
+
+.card.transport .header{
+	padding: 10px 10px 10px 10px;
+}
+
+.card.transport h2{
+	font-size: 14px;
+	margin: 0px;
+}
+
+.card.transport .body{
+	background: #e5efd9;
+	padding: 10px;
+	font-size: 23px !important;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.card.transport .body img{
+	width: 65px;
+}
+
+.card.transport .footer{
+	text-align: left;
+}
+
+.card.transport .footer button{
+	height: 30px;
+	width: 100%;
+}
+
+.attendance-card .selected{
+	background: #A5D6A7;
+}
+
+.area{
+	background: #f1f1f1;
+	background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+	height: 95%;
+}
+
+.circles{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 98%;
+    overflow: hidden;
+}
+
+.circles li{
+	position: absolute;
+    display: block;
+    list-style: none;
+    background: #8ad08a;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+}
+
+.circles li:nth-child(1){
+	left: 25%;
+	width: 80px;
+	height: 80px;
+	animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+	left: 10%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 2s;
+	animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+	left: 70%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+	left: 40%;
+	width: 60px;
+	height: 60px;
+	animation-delay: 0s;
+	animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+	left: 65%;
+	width: 20px;
+	height: 20px;
+	animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+	left: 75%;
+	width: 110px;
+	height: 110px;
+	animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+	left: 35%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+	left: 50%;
+	width: 25px;
+	height: 25px;
+	animation-delay: 15s;
+	animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+	left: 20%;
+	width: 15px;
+	height: 15px;
+	animation-delay: 2s;
+	animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+	left: 85%;
+	width: 150px;
+	height: 150px;
+	animation-delay: 0s;
+	animation-duration: 11s;
+}
+
+.btn-group-switch {
+	box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0);
+}
+.btn-group-switch .btn {
+	background-color: #8ad08a !important;
+    color: #ffffff;
+	border-radius: 0px !important;
+}
+.btn-group-switch .btn:hover {
+	color: #fff;
+	border: none;
+}
+
+.btn-group-switch .btn.active,
+.btn-group-switch .btn:active {
+	color: #ffffff;
+	background-color: #00A65A!important;
+	cursor: pointer;
+	border-radius: 0px !important;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.attendance-card .btn-group-switch .tabinnaitkey {
+	width: 49%;
+	height: 50%;
+}
+
+.attendance-card .btn-group-switch .tabsoftoken {
+	width: 50%;
+	height: 50%;
+}
+
+.attendace-check {
+	border: 1px solid grey;
+	font-weight: 700;
+}
+
+.atten-checkin {
+	font-size: 52px;
+	font-weight: 700;
+	height: 118px ;
+	color: #cd6363;
+	background-color: #fbe4e4 !important;
+	text-align: center;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+}
+
+.atten-checkout {
+	font-size: 52px;
+	font-weight: 700;
+	height: 118px ;
+	color: #008000;
+	margin: 0px 0px 0px -1px;
+	background-color: #e7fde7 ;
+	text-align: center;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+}
+
+.sign-in-out {
+	margin-top: 30px;
+	font-size: 35px;
+}
+
+.sign-in {
+	margin-right: 6px;
+}
+
+.sign-out {
+	margin-left: 6px;
+}
+
+.mark-attendance {
+	width: 81%;
+	margin: 3px 0px -6px 0px;
+}
+
+.textCenter{
+	text-align: center;
+}
+
+
+@keyframes animate {
+
+	0%{
+		transform: translateY(0) rotate(0deg);
+		opacity: 1;
+		border-radius: 0;
+	}
+
+	100%{
+		transform: translateY(-1000px) rotate(720deg);
+		opacity: 0;
+		border-radius: 50%;
+	}
+}
+
+
+/*--- Media Query ---*/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+	.circles li:nth-child(6), .circles li:nth-child(7), .circles li:nth-child(10) {
+		width: 95px;
+		height: 95px;
+	}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	
+}
+
+@media only screen and (min-width: 600px) and (max-width: 991px){
+	
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+	
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+	
+}

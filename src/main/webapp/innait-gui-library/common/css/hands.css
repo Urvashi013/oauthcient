@@ -1,0 +1,185 @@
+﻿#body img a
+{
+	border: 0;
+	outline:none !important;
+	text-decoration:none;
+}
+
+.lp
+{
+   background: url('../images/hands/left.jpg') no-repeat left bottom;
+   height: 326px;
+   width:233px
+}
+
+.lb
+{
+   background: url('../images/hands/handboth.jpg') no-repeat left bottom;
+   height: 200px;
+   width :136px;
+}
+
+.llbtn
+{
+    border: 0px solid red;    
+	width: 35px;
+    height: 110px;
+    margin-top: 83px;
+	margin-left: 6px;
+}
+
+.lrbtn
+{
+	float:left;
+    width: 35px;
+    height: 110px;
+    margin-top: 26px;
+	margin-left: 4px;
+}
+
+.lmbtn
+{
+    border: 0px solid red;
+    width: 36px;
+    height: 110px;
+    margin-top: 5px;
+	margin-left: 5px;
+}
+
+.lfbtn
+{
+    border: 0px solid red;
+    width: 35px;
+    height: 110px;
+    margin-top: 22px;
+	margin-left: 6px;
+}
+
+.ltbtn
+{
+    width: 42px;
+    height: 75px;
+    margin-top: 156px;
+	margin-left: 10px;
+}
+
+#righthand div
+{
+    border: 0px solid red;
+}
+
+.rp
+{
+   background: url('../images/hands/right.jpg') no-repeat left bottom;
+   height: 326px;
+   Width:240px;
+   margin-left:29px;
+}
+
+.rtbtn
+{
+    width: 42px;
+    height: 75px;
+    margin-top:156px;
+	margin-left: 10px;
+}
+
+.rfbtn
+{
+    width: 35px;
+    height: 110px;
+    margin-top: 22px;
+	margin-left: 2px;
+}
+
+.rmbtn
+{
+    width: 36px;
+    height: 110px;
+    margin-top: 5px;
+	margin-left: 5px;
+}
+
+
+.rrbtn
+{
+    width: 35px;
+    height: 110px;
+    margin-top: 26px;
+	margin-left: 4px;
+}
+
+.rlbtn
+{
+    border: 0px solid red;
+    width: 35px;
+    height: 110px;
+    margin-top: 83px;
+	margin-left: 6px;
+}
+
+.ll{ background: url('../images/hands/LL.jpg') no-repeat left bottom; width: 46px; height:213px; float: left; margin-top: 0px;	margin-left: -24px;}
+.lr{ background: url('../images/hands/LR.jpg') no-repeat left bottom; width: 44px; height:213px; float: left;}
+.lm{ background: url('../images/hands/LM.jpg') no-repeat left bottom; width: 47px; height:213px; float: left; margin-left: -1px;}
+.lf{ background: url('../images/hands/LF.jpg') no-repeat left bottom; width: 45px; height:213px; float: left; margin-left: -1px;}
+.lt{ background: url('../images/hands/LT.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: 11px;}
+.rt{ background: url('../images/hands/RT.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: -23px;}
+.rf{ background: url('../images/hands/RF.jpg') no-repeat left bottom; width: 45px; height: 213px; float: left; margin-left: 11px;}
+.rm{ background: url('../images/hands/RM.jpg') no-repeat left bottom; width: 47px; height: 213px; float: left; margin-left: -1px;}
+.rr{ background: url('../images/hands/RR.jpg') no-repeat left bottom; width: 44px; height: 213px; float: left; margin-left: -1px;}
+.rl{ background: url('../images/hands/RL.jpg') no-repeat left bottom; width: 46px; height: 213px; float: left;}
+
+.llactive{ background: url('../images/hands/LLActive.jpg') no-repeat left bottom; width: 46px; height:213px; float: left; margin-left: -24px;}
+.lractive{ background: url('../images/hands/LRActive.jpg') no-repeat left bottom; width: 44px; height:213px; float: left;}
+.lmactive{ background: url('../images/hands/LMActive.jpg') no-repeat left bottom; width: 47px; height:213px; float: left; margin-left: -1px;}
+.lfactive{ background: url('../images/hands/LFActive.jpg') no-repeat left bottom; width: 45px; height:213px; float: left; margin-left: -1px;}
+.ltactive{ background: url('../images/hands/LTActive.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: 11px;}
+.rtactive{ background: url('../images/hands/RTActive.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: -23px;}
+.rfactive{ background: url('../images/hands/RFActive.jpg') no-repeat left bottom; width: 45px; height: 213px; float: left; margin-left: 11px;}
+.rmactive{ background: url('../images/hands/RMActive.jpg') no-repeat left bottom; width: 47px; height: 213px; float: left; margin-left: -1px;}
+.rractive{ background: url('../images/hands/RRActive.jpg') no-repeat left bottom; width: 44px; height: 213px; float: left; margin-left: -1px;}
+.rlactive{ background: url('../images/hands/RLActive.jpg') no-repeat left bottom; width: 46px; height: 213px; float: left;}
+
+.ll_r { background: url('../images/hands/LL_R.jpg') no-repeat left bottom; width: 46px; height:213px; float: left; margin-top: 0px; margin-left: -24px;}
+.lr_r { background: url('../images/hands/LR_R.jpg') no-repeat left bottom; width: 44px; height:213px; float: left;}
+.lm_r { background: url('../images/hands/LM_R.jpg') no-repeat left bottom; width: 47px; height:213px; float: left; margin-left: -1px;}
+.lf_r { background: url('../images/hands/LF_R.jpg') no-repeat left bottom; width: 45px; height:213px; float: left; margin-left: -1px;}
+.lt_r { background: url('../images/hands/LT_R.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: 11px;}
+.rt_r { background: url('../images/hands/RT_R.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left;	margin-left: -23px;}
+.rf_r { background: url('../images/hands/RF_R.jpg') no-repeat left bottom; width: 45px; height: 213px; float: left; margin-left: 11px;}
+.rm_r { background: url('../images/hands/RM_R.jpg') no-repeat left bottom; width: 47px; height: 213px; float: left; margin-left: -1px;}
+.rr_r { background: url('../images/hands/RR_R.jpg') no-repeat left bottom; width: 44px; height: 213px; float: left; margin-left: -1px;}
+.rl_r { background: url('../images/hands/RL_R.jpg') no-repeat left bottom; width: 46px; height: 213px; float: left;}
+
+.ll_b { background: url('../images/hands/LL_B.jpg') no-repeat left bottom; width: 46px; height:213px; float: left; margin-top: 0px; margin-left: -24px;}
+.lr_b { background: url('../images/hands/LR_B.jpg') no-repeat left bottom; width: 44px; height:213px; float: left;}
+.lm_b { background: url('../images/hands/LM_B.jpg') no-repeat left bottom; width: 47px; height:213px; float: left; margin-left: -1px;}
+.lf_b { background: url('../images/hands/LF_B.jpg') no-repeat left bottom; width: 45px; height:213px; float: left; margin-left: -1px;}
+.lt_b { background: url('../images/hands/LT_B.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left;	margin-left: 11px;}
+.rt_b { background: url('../images/hands/RT_B.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left;	margin-left: -23px;}
+.rf_b { background: url('../images/hands/RF_B.jpg') no-repeat left bottom; width: 45px; height: 213px; float: left; margin-left: 11px;}
+.rm_b { background: url('../images/hands/RM_B.jpg') no-repeat left bottom; width: 47px; height: 213px; float: left; margin-left: -1px;}
+.rr_b { background: url('../images/hands/RR_B.jpg') no-repeat left bottom; width: 44px; height: 213px; float: left; margin-left: -1px;}
+.rl_b { background: url('../images/hands/RL_B.jpg') no-repeat left bottom; width: 46px; height: 213px; float: left;}
+
+.ll_y { background: url('../images/hands/LL_Y.jpg') no-repeat left bottom; width: 46px; height:213px; float: left; margin-top: 0px; margin-left: -24px;}
+.lr_y { background: url('../images/hands/LR_Y.jpg') no-repeat left bottom; width: 44px; height:213px; float: left;}
+.lm_y { background: url('../images/hands/LM_Y.jpg') no-repeat left bottom; width: 47px; height:213px; float: left; margin-left: -1px;}
+.lf_y { background: url('.../images/hands/LF_Y.jpg') no-repeat left bottom; width: 45px; height:213px; float: left; margin-left: -1px;}
+.lt_y { background: url('../images/hands/LT_Y.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: 11px;}
+.rt_y { background: url('../images/hands/RT_Y.jpg') no-repeat right bottom; width: 65px; height: 213px; float: left; margin-left: -23px;}
+.rf_y { background: url('../images/hands/RF_Y.jpg') no-repeat left bottom; width: 45px; height: 213px; float: left; margin-left: 11px;}
+.rm_y { background: url('../images/hands/RM_Y.jpg') no-repeat left bottom; width: 47px; height: 213px; float: left; margin-left: -1px;}
+.rr_y { background: url('../images/hands/RR_Y.jpg') no-repeat left bottom; width: 44px; height: 213px; float: left; margin-left: -1px;}
+.rl_y { background: url('../images/hands/RL_Y.jpg') no-repeat left bottom; width: 46px; height: 213px; float: left;}
+
+.ll-nfiq{ margin-left: 11px !important;	margin-top: 10px !important; color: white !important; }
+.lr-nfiq{ margin-left: 12px !important;	margin-top: 7px !important; color: white !important; }
+.lm-nfiq{ margin-left: 13px !important; margin-top: 10px !important; color: white !important; }
+.lf-nfiq{ margin-left: 15px !important; margin-top: 29px !important; color: white !important; }
+.lt-nfiq{ margin-left: 31px !important; margin-top: 10px !important; color: white !important; }
+.rt-nfiq{ margin-left: 8px !important; margin-top: 31px !important; color: white !important; }
+.rf-nfiq{ margin-left: 16px !important; margin-top: 29px !important; color: white !important; }
+.rm-nfiq{ margin-left: 17px !important; margin-top: 10px !important; color: white !important; }
+.rr-nfiq{ margin-left: 16px !important; margin-top: 32px !important; color: white !important;}
+.rl-nfiq{ margin-left: 17px !important; margin-top: 10px !important; color: white !important; }

@@ -1,0 +1,138 @@
+html, body{ height:100% } 
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background: linear-gradient(#cef3d2 40%, transparent 40%) no-repeat;
+    box-shadow: 0 200px 0 -100px #3ecf8e inset;
+    overflow-x: hidden;
+}
+
+.site-header {
+    position: relative;
+    padding: 0px 0px;
+	height: 90px;
+}
+
+.container-sm {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.container-sm h1 {
+    margin-bottom: 20px;
+}
+
+.site-header-inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.services-item {
+    padding: 15px 15px;
+    border: 1px solid #ddd;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+    min-height: 276px !important;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.services-item:hover {
+    border: 1px solid #3ecf8e;
+    box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
+    -moz-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; 
+}
+    
+.services-item .icon {
+    background: #e3fff2;
+    width: 110px;
+    height: 110px;
+    margin: 0px auto;
+    margin-bottom: 0px;
+    text-align: center;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.services-item .icon i {
+    font-size: 40px;
+    color: #3ecf8e;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+}
+
+.services-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #151948;
+    margin-bottom: 15px;
+}
+
+.services-item p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #5e629c;
+}
+
+.thumbnail-items{
+    border: 1px solid #ddd;
+    -moz-transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+
+.thumbnail-items:hover{
+	 border: 1px solid #3ecf8e;
+    box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
+    -moz-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; 
+}
+
+.thumbnail-items h3 {
+    font-weight: 600;
+}
+
+.thumbnail-items label {
+    color: #1a5e1b;
+}
+
+.site-footer {
+    line-height: 20px;
+}
+
+.header-links {
+    text-align: center;
+}
+
+.header-links h4 {
+    margin-bottom: 0px;
+}
+
+.header-links h6 {
+    margin-top: 5px;
+}
+
+.select2-container { width: 100% !important; }
+.select2-container--default .select2-selection--single {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+

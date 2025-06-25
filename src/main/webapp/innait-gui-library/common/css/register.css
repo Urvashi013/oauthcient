@@ -1,0 +1,121 @@
+body {
+	background-image: linear-gradient(to bottom right, #faf8f4, #faf8f4);
+	color: #fff;
+}
+
+.register {
+	margin: 2% auto;
+	max-width: 75%;
+}
+
+.register > .left, .register > .right {
+	text-align: center;
+}
+
+.register > .left, .register > .right {
+	text-align: center;
+}
+
+.register > .left img {
+	width: 90%;
+    max-width: 300px;
+    margin: 20px 0 20px 0;
+	cursor: pointer;
+}
+
+.logo.client > img {
+	width: 175px;
+	margin-bottom: 20px;
+}
+
+.logo.product > img {
+	width: 125px;
+}
+
+.m-b-0 {
+	margin-bottom: 0px !important;
+}
+
+.m-b-10 {
+    margin-bottom: 10px !important;
+}
+
+.card {
+	border-radius: 2px;
+}
+
+.select2-results {
+    color: black;
+}
+
+.select2-hidden-accessible {
+    height: 0px;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 0px solid #aaa;
+	height: 30px;
+}
+
+.select2-container--default .select2-selection--multiple {
+    border: 0px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-left: 0px !important;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single
+{
+	background-color: #ffffff !important;
+    cursor: not-allowed !important;
+}
+
+.select2-container--default .select2-results__group {
+    background: #cdccc9;
+	font-size: 12px;
+    font-weight: normal;
+}
+
+.select2-container {
+    display: block !important;
+}
+
+.text-danger {
+    color: #ff5033;
+}
+
+.card .header h2 {
+    font-size: 13px;
+}
+
+.card .body {
+    font-size: 12px;
+}
+
+.btn { font-size: 12px; }
+
+label {
+    margin-bottom: 0px;
+}
+
+.form-control {
+    height: 27px;
+}
+
+.card .body .col-xs-12, .card .body .col-sm-12, .card .body .col-md-12, .card .body .col-lg-12 {
+    margin-bottom: 10px;
+}
+
+.input-group { margin-bottom: 0px; }
+
+.alert > i { margin-right: 5px; }
+
+@media (min-width: 992px) {
+	.register > .left { border-right: 2px solid #fff; }
+}
+
+@media (max-width: 992px) {
+	.register > .left { border-bottom: 2px solid #fff; }
+	.register > .right > .card:first-child { margin-top: 20px; }
+}

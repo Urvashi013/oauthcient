@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+
+<!-- Custom Css -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css"
+	integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+	crossorigin="anonymous">
+<script src="js/jquery.min.js"></script>
+<script src="js/index.js"></script>
+
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarNav" aria-controls="navbarNav"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<!-- <div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto font-weight-bold small">
+					<li class="nav-item  "><a class="nav-link active"
+						aria-current="page" href="#">Color Oracle</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">How to</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Manual</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Design
+							Tips</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">Useful
+							Links</a></li>
+
+				</ul>
+			</div> -->
+		</div>
+	</nav>
+	<div></div>
+	<div class="main--bgc pb-5">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 130 1440 85">
+			<path fill="#f8f9fa" fill-opacity="1"
+				d="M0,224L60,224C120,224,240,224,360,213.3C480,203,600,181,720,181.3C840,181,960,203,1080,197.3C1200,192,1320,160,1380,144L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
+
+		<div class="container container--title ">
+			<div class="row min-vh-75">
+				<div class="col text-center mt-5 mb-5">
+					<h1 class="mb-4">Oauth Client NIC</h1>
+					<p class="h5">Oauth Client is a one stop shop for all the Oauth
+						Clients that NIC provides for internal testing purposes.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container mt-5 ">
+			<div class="row align-items-center ">
+
+				<div class="col-xl-4">
+					<div class="card text-center p-5 shadow mx-auto"
+						style="width: 22rem;">
+						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+							alt="Linux Logo">
+						<div class="card-body pb-0">
+							<button class="btn btn-secondary mb-2 font-weight-bold"
+								onclick="selectDeployment(0)" role="button">Click for
+								JanParichay (Local)</button>
+							<p class="card-text text-muted small"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xl-4 ">
+					<div class="card text-center p-5 shadow mx-auto mb-4 mb-xl-0"
+						style="width: 22rem;">
+						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+							alt="JanParichay Logo">
+						<div class="card-body">
+							<button class="btn btn-primary mb-2 font-weight-bold"
+								onclick="selectDeployment(1)" onclick=role="button">Click
+								for JanParichay (Stag)</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4">
+					<div
+						class="card text-center p-5  shadow mx-auto mb-4 mb-xl-0 card--windows "
+						style="width: 22rem;">
+						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+							alt="Windows Logo">
+						<div class="card-body pb-0">
+							<button class="btn btn-primary mb-2 font-weight-bold"
+								onclick="selectDeployment(1)" role="button">Click for
+								JanParichay (Dev)</button>
+							<p class="card-text text-muted small">Requires host entry</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4">
+					<div class="card text-center p-5 shadow mx-auto"
+						style="width: 22rem;">
+						<img src="images/1234567899.png" class="card-img-top mx-auto"
+							alt="Linux Logo">
+						<div class="card-body pb-0">
+							<button class="btn btn-warning mb-2 font-weight-bold"
+								onclick="selectDeployment(2)" role="button">Click for
+								Parichay (Staging)</button>
+							<p class="card-text text-muted small"></p>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer class="page-footer footer--bgc font-small teal pt-5">
+
+		<!-- Footer Text -->
+		<!-- <div class="container text-center  small">
+
+			Grid row
+			<div class="row  justify-content-center">
+
+				Grid column
+				<div class="col-md-3 mt-md-0 mt-3 mb-3 mr-lg-5">
+
+					Content
+					<h6 class=" font-weight-bold ">About</h6>
+					<p class="w-50 w-md-100 mx-auto"></p>
+
+				</div>
+				Grid column
+
+
+
+				Grid column
+				<div class="col-md-3 mb-md-0 mb-3 mr-lg-5">
+
+					Content
+					<h6 class=" font-weight-bold ">Feedback</h6>
+					<p class="w-50 w-md-100 mx-auto"></p>
+
+				</div>
+				Grid column
+
+
+				Grid column
+				<div class="col-md-3 mb-md-0  ">
+
+					Content
+					<h6 class="font-weight-bold ">Source</h6>
+					<p class="w-50 w-md-100 mx-auto"></p>
+
+				</div>
+				Grid column
+
+			</div>
+			Grid row
+
+		</div> -->
+		<!-- Footer Text -->
+
+
+
+	</footer>
+</body>
+</html>
