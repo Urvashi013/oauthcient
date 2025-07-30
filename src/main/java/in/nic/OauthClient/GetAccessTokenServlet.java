@@ -91,15 +91,13 @@ public class GetAccessTokenServlet extends HttpServlet {
 		ResourceBundle rbOauth = ResourceBundle.getBundle("oauth");
 
 		String dType = request.getParameter("state");
-		
-		String client_id = rbOauth.getString("client_id"+dType);
+
+		String client_id = rbOauth.getString("client_id" + dType);
 		String redirect_uri = rbOauth.getString("redirect_uri");
 		String code = request.getParameter("code");
-		String client_secret = rbOauth.getString("client_secret"+dType);
+		String client_secret = rbOauth.getString("client_secret" + dType);
 		String code_verifier = rbOauth.getString("code_verifier");
 		String grant_type = rbOauth.getString("grant_type");
-
-		
 
 		System.out.println("getAccessToken called");
 
@@ -129,6 +127,7 @@ public class GetAccessTokenServlet extends HttpServlet {
 		urlParameters.add(new BasicNameValuePair("grant_type", grant_type));
 
 		HttpPost post = new HttpPost(rbOauth.getString("OAUTH_TOKEN_API" + dType));
+		post.addHeader("Accept", "application/json");
 
 		post.setEntity(new UrlEncodedFormEntity(urlParameters));
 
@@ -172,9 +171,6 @@ public class GetAccessTokenServlet extends HttpServlet {
 
 		get.setHeader("Authorization", "Bearer " + access_token);
 
-//		HttpGet get = new HttpGet(
-//				ResourceBundle.getBundle("app").getString("PARICHAY_TOKEN_URL")  + json.getString("access_token"));
-
 		Object userJsonObj = "";
 
 		try (CloseableHttpClient httpClient = HttpClientBuilder.create().build();
@@ -189,28 +185,6 @@ public class GetAccessTokenServlet extends HttpServlet {
 			DBObject userJson = (DBObject) userJsonObj;
 			System.out.println("User details JSON: " + userJson);
 
-			PrintWriter pw = response.getWriter();
-			try {
-				pw.print("<html> <marquee direction = 'left'><strong>WELCOME TO THE WORLD OF OAUTH<strong></marquee>");
-				pw.print("<div text-align: center;><br>Name: " + userJson.get("given_name") + " "
-						+ userJson.get("family_name"));
-			} catch (Exception e) {
-				pw.print("Name: " + userJson.get("given_name"));
-			}
-			/*
-			 * pw.print("<br>Mobile Number: " + userJson.get("MobileNo") + "</div>");
-			 * 
-			 * pw.print("<br>LoginId: " + userJson.get("loginId") + "</div>");
-			 * pw.print("<br>ParichayId: " + userJson.get("ParichayId") + "</div>");
-			 * pw.print("<br>Employee Code : " + userJson.get("employeeCode") + "</div>");
-			 * pw.print("<br>Aadhaar : " + userJson.get("aadharNo") + "</div>");
-			 * pw.print("<br>PAN : " + userJson.get("panNo") + "</div>");
-			 * pw.print("<br>DL : " + userJson.get("dlNo") + "</div>");
-			 * pw.print("<br>Email : " + userJson.get("email") + "</div>");
-			 * pw.print("<br>State : " + userJson.get("state") + "</div>");
-			 * pw.print("<br>ProfilePic : " + userJson.get("ProfilePic") + "</div>");
-			 */
-
 			// Sending response back to front end
 			System.out.println("Latest Update");
 			String userName = "";
@@ -223,9 +197,17 @@ public class GetAccessTokenServlet extends HttpServlet {
 
 			}
 
+			try {
+				if (userName.isEmpty() || userName.contains("null") || userName == null) {
+					userName = userJson.get("name").toString();
+				}
+			} catch (Exception e) {
+				userName = userJson.get("first_name") + " " + userJson.get("last_name");
+			}
+
 			String eCode = "";
 			try {
-				eCode = userJson.get("employeeCode").toString();
+				eCode = userJson.get("id").toString();
 			} catch (Exception e) {
 				eCode = "";
 			}
@@ -237,39 +219,11 @@ public class GetAccessTokenServlet extends HttpServlet {
 				Mobile = "";
 			}
 
-			String aadharNo = "";
-			try {
-				aadharNo = userJson.get("aadharNo").toString();
-			} catch (Exception e) {
-				aadharNo = "";
-			}
-
-			String panNo = "";
-			try {
-				panNo = userJson.get("panNo").toString();
-			} catch (Exception e) {
-				panNo = "";
-			}
-
-			String dlNo = "";
-			try {
-				dlNo = userJson.get("dlNo").toString();
-			} catch (Exception e) {
-				dlNo = "";
-			}
-
 			String primaryemail = "";
 			try {
 				primaryemail = userJson.get("email").toString();
 			} catch (Exception e) {
 				primaryemail = "";
-			}
-
-			String state = "";
-			try {
-				state = userJson.get("dlNo").toString();
-			} catch (Exception e) {
-				state = "";
 			}
 
 			String gender = "";
@@ -279,18 +233,31 @@ public class GetAccessTokenServlet extends HttpServlet {
 				gender = "";
 			}
 
-			String ParichayId = "";
-			try {
-				ParichayId = userJson.get("ParichayId").toString();
-			} catch (Exception e) {
-				ParichayId = "";
+			String ServiceName = "";
+			System.out.println("dType : " + ServiceName);
+
+			switch (dType) {
+
+			case "0":
+				ServiceName = "Google";
+				break;
+			case "1":
+				ServiceName = "GitHub";
+				break;
+			case "2":
+				ServiceName = "Zoom";
+				break;
+			default:
+				ServiceName = "Oauth Service";
+				break;
 			}
+
+			System.out.println("Service Name : " + ServiceName);
 
 			// Response Sent
 			response.sendRedirect(rbOauth.getString("HOME_PAGE") + "?userName=" + userName + "&eCode=" + eCode
-					+ "&Mobile=" + Mobile + "&aadharNo=" + aadharNo + "&panNo=" + panNo + "&dlNo=" + dlNo
-					+ "&primaryEmailId=" + primaryemail + "&state=" + state + "&token=" + access_token + "&gender="
-					+ gender + "&ParichayId=" + ParichayId + "&dType=" + dType);
+					+ "&Mobile=" + Mobile + "&primaryEmailId=" + primaryemail + "&token=" + access_token + "&gender="
+					+ gender + "&serviceName=" + ServiceName + "&dType=" + dType);
 			return;
 
 		} catch (Exception e) {

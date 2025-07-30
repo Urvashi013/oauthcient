@@ -34,11 +34,22 @@ public class GetAuthCodeServlet extends HttpServlet {
 		ResourceBundle rbOauth = ResourceBundle.getBundle("oauth");
 
 		// Adding our details
-		String oauthURL = "client_id=" + rbOauth.getString("client_id" + dType) + "&" + "redirect_uri="
-				+ rbOauth.getString("redirect_uri") + "&" + "scope=" + rbOauth.getString("scope" + dType) + "&"
-				+ "code_challenge=" + rbOauth.getString("code_challenge") + "&" + "code_challenge_method="
-				+ rbOauth.getString("code_challenge_method"+ dType) + "&" + "response_type="
-				+ rbOauth.getString("response_type") + "&" + "state=" + dType;
+		String oauthURL = "";
+				
+				if(!dType.equals("2")) {
+					oauthURL = "client_id=" + rbOauth.getString("client_id" + dType) + "&" + "redirect_uri="
+							+ rbOauth.getString("redirect_uri") + "&" + "scope=" + rbOauth.getString("scope" + dType) + "&"
+							+ "code_challenge=" + rbOauth.getString("code_challenge") + "&" + "code_challenge_method="
+							+ rbOauth.getString("code_challenge_method"+ dType) + "&" + "response_type="
+							+ rbOauth.getString("response_type") + "&" + "state=" + dType;
+				}else {
+					
+					oauthURL = "client_id=" + rbOauth.getString("client_id" + dType) + "&" + "redirect_uri="
+							+ rbOauth.getString("redirect_uri")+"&" + "response_type="
+									+ rbOauth.getString("response_type") + "&" + "state=" + dType;
+				}
+				
+				
 
 		// Using Google's auth endpoint
 		System.out.println(rbOauth.getString("BASE_URL" + dType) + "?" + oauthURL);

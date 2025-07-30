@@ -51,7 +51,7 @@
 			<div class="row min-vh-75">
 				<div class="col text-center mt-5 mb-5">
 					<!-- <img class="oauthLogo" src="images/oauthNIC.png" alt="Logo" /> -->
-					<h1 class="mb-4">Oauth Clients NIC</h1>
+					<h1 class="mb-4">Oauth Clients</h1>
 					<p class="h5">Oauth Client is a one stop shop for all the Oauth
 						Clients that NIC provides for internal testing purposes.</p>
 				</div>
@@ -63,7 +63,7 @@
 				<div class="col-xl-4">
 					<div class="card text-center p-5 shadow mx-auto"
 						style="width: 22rem;">
-						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+						<img src="images/google-logo.png" class="card-img-top mx-auto"
 							alt="Linux Logo">
 						<div class="card-body pb-0">
 							<button class="btn btn-danger mb-2 font-weight-bold"
@@ -77,7 +77,7 @@
 				<div class="col-xl-4 ">
 					<div class="card text-center p-5 shadow mx-auto mb-4 mb-xl-0"
 						style="width: 22rem;">
-						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+						<img src="images/github-logo.png" class="card-img-top mx-auto"
 							alt="JanParichay Logo">
 						<div class="card-body">
 							<button class="btn btn-dark mb-2 font-weight-bold"
@@ -90,7 +90,7 @@
 					<div
 						class="card text-center p-5  shadow mx-auto mb-4 mb-xl-0 card--windows "
 						style="width: 22rem;">
-						<img src="images/jan-parichay.png" class="card-img-top mx-auto"
+						<img src="images/zoom-logo.png" class="card-img-top mx-auto"
 							alt="Windows Logo">
 						<div class="card-body pb-0">
 							<button class="btn btn-primary mb-2 font-weight-bold"
@@ -104,7 +104,7 @@
 				<!-- <div class="col-xl-4">
 					<div class="card text-center p-5 shadow mx-auto"
 						style="width: 22rem;">
-						<img src="images/1234567899.png" class="card-img-top mx-auto"
+						<img src="images/google-logo.png" class="card-img-top mx-auto"
 							alt="Linux Logo">
 						<div class="card-body pb-0">
 							<button class="btn btn-dark mb-2 font-weight-bold"
@@ -119,7 +119,7 @@
 				<div class="col-xl-4">
 					<div class="card text-center p-5 shadow mx-auto"
 						style="width: 22rem;">
-						<img src="images/1234567899.png" class="card-img-top mx-auto"
+						<img src="images/github-logo.png" class="card-img-top mx-auto"
 							alt="Linux Logo">
 						<div class="card-body pb-0">
 							<button class="btn btn-dark mb-2 font-weight-bold"
@@ -134,7 +134,7 @@
 				<div class="col-xl-4">
 					<div class="card text-center p-5 shadow mx-auto"
 						style="width: 22rem;">
-						<img src="images/1234567899.png" class="card-img-top mx-auto"
+						<img src="images/zoom-logo.png" class="card-img-top mx-auto"
 							alt="Linux Logo">
 						<div class="card-body pb-0">
 							<button class="btn btn-warning mb-2 font-weight-bold"
